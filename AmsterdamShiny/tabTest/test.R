@@ -14,6 +14,9 @@ jaar <- dataTree[["Veiligheid"]][["VVEILIGVOELEN_P"]][["Wijk"]][["jaar"]]
 output$testplot <- renderPlot(plot(VeiligheidGevoel,jaar))
 
 
+TESTblalbalblal
+
+
 
 #output$distPlot <- renderPlot({
 #  x <- dataTree[["Veiligheid"]][["VVEILIGVOELEN_P"]][["Wijk"]][["waarde"]][1:10]
