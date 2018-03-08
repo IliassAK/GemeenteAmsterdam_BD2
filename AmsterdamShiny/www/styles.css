@@ -1,0 +1,173 @@
+.mapcol {
+  padding-left: 0px;
+  padding-right: 0px;
+  /*border-bottom: 2px dotted white;*/
+}
+
+#controls {
+  border: 1px solid darkgrey;
+  background-color: white;
+  padding: 0 20px 20px 20px;
+  border-radius: 4px;
+  opacity: 0.65;
+  zoom: 1;
+  transition: opacity 250ms 250ms;
+}
+
+#controls:hover {
+  opacity: 0.95;
+  transition-delay: 0;
+}
+
+.leaflet-container {
+  background-color: white !important;
+}
+
+.btn-sq-lg {
+  width: 100% !important;
+  height: 200px !important;
+}
+
+.btn-sq {
+  width: 100px !important;
+  height: 100px !important;
+  font-size: 10px;
+}
+
+.btn-sq-sm {
+  width: 50px !important;
+  height: 50px !important;
+  font-size: 10px;
+}
+
+.btn-sq-xs {
+  width: 25px !important;
+  height: 25px !important;
+  padding:2px;
+}
+
+.btn-tiles-text {
+  font-size: 18px !important;
+  color: #ffffff !important;
+}
+
+.btn-tiles-text-2 {
+  font-size: 16px !important;
+  color: #ffffff !important;
+}
+
+.btn-tiles-text-small {
+  font-size: 14px !important;
+  color: #ffffff !important;
+}
+
+.col-lg-3 span {
+    display:block;
+    text-align:center
+}
+
+.lightblue-background {
+  background-color:#549ed6;
+  
+}
+
+.white {
+  color:#ffffff;
+  
+}
+
+#inTabset > li:nth-child(2) > a {
+  display: none;
+}
+
+body {
+  background-color: #e5e5e5 !important;
+}
+
+.navbar-default {
+  background-color: #f3f3f3 !important;
+  color: #333 !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #333 !important;
+  font-size: 16px !important;
+  
+  font-family: "AvenirNextLTW01-Medium",verdana,sans-serif !important;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #ec0000 !important;
+  background-color: #f3f3f3 !important;
+  font-size: 16px !important;
+  font-family: "AvenirNextLTW01-Medium",verdana,sans-serif !important;
+}
+
+.navbar-default .navbar-nav > li.active > a {
+  color: #333 !important;
+  background-color: #f3f3f3 !important;
+  font-size: 16px !important;
+  font-family: "AvenirNextLTW01-Medium",verdana,sans-serif !important;
+}
+
+.container {
+  background-color: #fff;
+}
+
+.leaflet-bar {
+  border: 2px solid red;
+}
+
+nav > .container-fluid {
+  margin-left: -15px !important;
+  margin-right: -15px !important;
+  background-color: #f3f3f3 !important;
+}
+
+.header {
+  height: 111px;
+}
+
+.header > img {
+  height: 68px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.headertext {
+  float: right;
+  margin-top: -5px;
+  margin-right: 15px;
+}
+
+.leefbaarheidCol {
+  text-align: center;
+}
+
+.scoreInfo {
+  font-size: 32px;
+  margin-top: 50px;
+}
+
+#leefbaarheidTable > table {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  margin-top: 25px;
+  width: 88% !important;
+}
+
+/* Dropdowns with the plot.ly menu bar fix */
+.selectize-dropdown {
+  z-index: 2000 !important;
+}
+
+/* Leaflet legend Chrome alignment fix */
+.leaflet-control-container .legend {
+  line-height: 19px !important;
+}
+
+.btn-danger {
+  background-color: #ec0000 !important;
+}

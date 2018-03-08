@@ -1,0 +1,26 @@
+# Default back button value and icon
+textBackButton <<- ""
+iconBackButton <<- ""
+
+observeEvent(input$but1, setBackButton("Bestuur en ondersteuning", "fa fa-handshake-o") )
+observeEvent(input$but2, setBackButton("Veiligheid", "fa fa-lock"))
+observeEvent(input$but3, setBackButton("Bevolking", "fa fa-users"))
+observeEvent(input$but4, setBackButton("Verkeer", "fa fa-car"))
+observeEvent(input$but5, setBackButton("Onderwijs", "fa fa-building"))
+observeEvent(input$but6, setBackButton("Cultuur", "fa fa-sign-language"))
+observeEvent(input$but7, setBackButton("Diversiteit", "fa fa-area-chart"))
+observeEvent(input$but8, setBackButton("Duurzaamheid", "fa fa-battery-three-quarters"))
+observeEvent(input$but9, setBackButton("Werk", "fa fa-suitcase"))
+observeEvent(input$but10, setBackButton("Welzijn en zorg", "fa fa-heartbeat"))
+observeEvent(input$but11, setBackButton("Bevolking leeftijd", "fa fa-line-chart"))
+observeEvent(input$but12, setBackButton("Inkomen", "fa fa-eur"))
+observeEvent(input$but13, setBackButton("Wonen", "fa fa-home"))
+observeEvent(input$but14, setBackButton("Sport", "fa fa-futbol-o"))
+observeEvent(input$but15, setBackButton("Participatie", "fa fa-thumbs-o-up"))
+observeEvent(input$but16, setBackButton("Bedrijvigheid winkels", "fa fa-shopping-cart"))
+observeEvent(input$but17, setBackButton("Bedrijvigheid functie", "fa fa-bank"))
+observeEvent(input$but18, setBackButton("Bedrijvigheid sectie", "fa fa-institution"))
+observeEvent(input$but19, setBackButton("Dienstverlening en informatie", "fa fa-info"))
+observeEvent(input$but20, setBackButton("Openbare ruimte", "fa fa-globe"))
+observeEvent(input$but21, setBackButton("Bedrijvigheid", "fa fa-cubes"))
+observeEvent(input$but22, setBackButton("Leefbaarheid", "fa fa-globe"))
