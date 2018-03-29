@@ -337,16 +337,44 @@ div(class="container",
                           )
                         )
                ),
-               tabPanel("Test",
-                        fluidPage(
-                          h4("Test Pagina"),
-                          plotOutput("testplot"),
-                          htmlOutput("testtekst")
+               tabPanel("Verbanden",
+                        div(class="row",
+                            div(class="col-md-9 mapcol",
+                                leafletOutput("mapCorrelations", width="100%", height="500px")
+                            
+                        ),
+                        div(class="row",
+                            div(class="col-md-3 datacol",
+                                selectInput(
+                                  inputId = "CorrelationElem1",
+                                  label = "indicator(en)",
+                                  choices = getThemeLabeledIndicatorList(),
+                                  selected = NULL,
+                                  multiple = TRUE,
+                                  width = "90%"
+                                )
+                            ,
+                                    selectInput(
+                                      inputId = "CorrelationLevel",
+                                      label = "Niveau",
+                                      choices = c(emptyInputString),
+                                      selected = NULL,
+                                      multiple = FALSE,
+                                      width = "90%"
+                                    )
+                            )
+                                
+                            ),
+                            div(class="row",
+                                div(class="col-md-6 datacol",
+                                    plotlyOutput("CorrelationGraph1")
+                                )  
+                            )
                         )
+               )
                
-               
-    )
     ),
     # Disclaimer
     htmlOutput("disclaimer")
 )
+
