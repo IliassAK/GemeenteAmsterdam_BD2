@@ -350,10 +350,27 @@ div(class="container",
                                   label = "indicator(en)",
                                   choices = getThemeLabeledIndicatorList(),
                                   selected = NULL,
-                                  multiple = TRUE,
+                                  multiple = FALSE,
                                   width = "90%"
                                 )
-                            ,
+                                ,
+                                sliderInput(inputId = "corr",
+                                        label = "Correlatie",
+                                        min=-1,
+                                        max=1,
+                                        value=0,
+                                        step=0.1),
+                            
+                            div(class="row",
+                                      selectInput(
+                                      inputId = "Corr2",
+                                      label = "indicator(en)",
+                                      choices = NULL,
+                                      selected = NULL,
+                                      multiple = FALSE,
+                                      width = "90%"
+                                    )
+                                    ,
                                     selectInput(
                                       inputId = "CorrelationLevel",
                                       label = "Niveau",
@@ -368,7 +385,7 @@ div(class="container",
                             div(class="row",
                                 div(class="col-md-6 datacol",
                                     plotlyOutput("CorrelationGraph1")
-                                )  
+                                )
                             )
                         )
                )
@@ -377,4 +394,6 @@ div(class="container",
     # Disclaimer
     htmlOutput("disclaimer")
 )
+)
+
 

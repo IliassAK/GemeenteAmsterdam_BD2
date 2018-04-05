@@ -1,16 +1,14 @@
 library(DBI)
 library(RMySQL)
+library(rJava)
+library(RJDBC)
 
 # ----------------
 # Database functions
 # ----------------
 connectDb <- function() {
-  conn <- dbConnect(
-    drv = RMySQL::MySQL(),
-    dbname = "zakarkae001",
-    host = "oege.ie.hva.nl",
-    username = "akarkae001",
-    password = "8T5D#tQlQbc$fc")
+  drv <- JDBC("com.mysql.jdbc.Driver", "C:/Users/Illia/Desktop/School/SNE Jaar 2/Big Data/Drivers/mysql-connector-java-5.1.45-bin.jar")
+  conn <- dbConnect(drv, "jdbc:mysql://localhost/zdoornw001", "root", "P@ssw0rd", useSSL=FALSE)
   return(conn)
 }
 

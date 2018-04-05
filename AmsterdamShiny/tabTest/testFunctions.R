@@ -25,7 +25,7 @@ addToMapCorrelations <- function(map, level) {
   json$style  = list(
     weight = 3,
     color = "#555555",
-    fillColor = "#ec0000",
+    fillColor = "#000000",
     opacity = 1,
     fillOpacity = 0.5
   )
@@ -59,4 +59,11 @@ updateCorrelationGraph1 <- function(properties) {
   
   output$CorrelationGraph1 <- renderPlotly({fullplot})
 }
+
+
+
+
+
+
+
 
