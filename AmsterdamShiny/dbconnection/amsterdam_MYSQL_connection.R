@@ -7,8 +7,12 @@ library(RJDBC)
 # Database functions
 # ----------------
 connectDb <- function() {
-  drv <- JDBC("com.mysql.jdbc.Driver", "C:/Users/Illia/Desktop/School/SNE Jaar 2/Big Data/Drivers/mysql-connector-java-5.1.45-bin.jar")
-  conn <- dbConnect(drv, "jdbc:mysql://localhost/zdoornw001", "root", "P@ssw0rd", useSSL=FALSE)
+  conn <- dbConnect(
+    drv = RMySQL::MySQL(),
+    dbname = "zdoornw001",
+    host = "localhost",
+    username = "root",
+    password = "P@ssw0rd")
   return(conn)
 }
 
