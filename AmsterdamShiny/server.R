@@ -28,6 +28,8 @@ function(input, output, session) {
   source("tabLeefbaarheid//leefbaarheid.R", local=TRUE)
   
   source("tabTest//test.R", local=TRUE)
+  source("tabTest//testFunctions.R", local=TRUE)
+  source("tabTest//corr.R", local=TRUE)
   
   #Disclaimer --------------
   

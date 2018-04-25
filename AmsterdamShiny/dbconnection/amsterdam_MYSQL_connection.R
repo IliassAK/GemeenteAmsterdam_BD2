@@ -1,5 +1,7 @@
 library(DBI)
 library(RMySQL)
+library(rJava)
+library(RJDBC)
 
 # ----------------
 # Database functions
@@ -7,10 +9,10 @@ library(RMySQL)
 connectDb <- function() {
   conn <- dbConnect(
     drv = RMySQL::MySQL(),
-    dbname = "zakarkae001",
-    host = "oege.ie.hva.nl",
-    username = "akarkae001",
-    password = "8T5D#tQlQbc$fc")
+    dbname = "zdoornw001",
+    host = "localhost",
+    username = "root",
+    password = "P@ssw0rd")
   return(conn)
 }
 
