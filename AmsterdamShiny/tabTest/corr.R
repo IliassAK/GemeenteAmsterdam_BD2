@@ -19,20 +19,20 @@ observe({
   dfuiCorrelatieUpdate<- unique(dfuiCorrelatie) %>% subset(indicator1 == varElemen1) %>% subset(correlatie >= varCorr)
   
   
-
+  
   
   leegCorr<- c(dfuiCorrelatieUpdate$indicator2)
   
   
   
   updateSelectInput(session,
-                       
-                       inputId =  "Corr2",
-                       
-                       choices = leegCorr,
-                      label = "Indicator 2",
-                       
-                       selected= NULL)
+                    
+                    inputId =  "Corr2",
+                    
+                    choices = leegCorr,
+                    label = "Indicator 2",
+                    
+                    selected= NULL)
   
 })
 

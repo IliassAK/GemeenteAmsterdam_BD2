@@ -189,99 +189,99 @@ div(class="container",
                                     a(class="btn btn-sq-lg btn-danger action-button", id="butBack",
                                       htmlOutput("iconBackButton"),
                                       helpText(class="btn-tiles-text-small", textOutput("textBackButton"),
-                                      span(class="fa fa-arrow-left", style="font-size:2em;")
+                                               span(class="fa fa-arrow-left", style="font-size:2em;")
+                                      )
                                     )
                                 )
-                            )
-                        ),
-                        
-                        div(class="col-md-3 datacol", 
-                        hr(),
-                        h4("Geselecteerd gebied"),
-                        tableOutput("mapdataTable")),
-                        
-                        div(class="row bg-light",
-                            div(class="col-md-4",
-                                selectInput(inputId ="indicator",
-                                            label = "Indicator",
-                                            choices = c(emptyInputString), 
-                                            selected = NULL,
-                                            multiple = FALSE
-                                )
                             ),
-                            div(class="col-md-4",
-                                selectInput(inputId ="level",
-                                            label = "Niveau",
-                                            choices = c(emptyInputString),
-                                            selected = NULL,
-                                            multiple = FALSE
-                                )
-                            ),
-                            div(class="col-md-4",
-                                sliderInput(inputId = "year",
-                                            label = "Jaar",
-                                            min=0,
-                                            max=0,
-                                            value=0,
-                                            step=1,
-                                            animate = animationOptions(
-                                              interval = 1500,
-                                              loop = FALSE
-                                            ))
-                            )
-                        ),
-                        div(class="row", 
-                            div(class = "col-lg-12",
-                                textOutput("metadataText")
-                            )
-                        ),
-                        hr(),
-                        div(class="row",
-                            div(class="col-lg-12",
-                                selectInput(inputId = "selectedAreaSelect",
-                                            label = "gebied(en)",
-                                            choices = c(emptyInputString), 
-                                            selected = NULL,
-                                            multiple = TRUE
+                            
+                            div(class="col-md-3 datacol", 
+                                hr(),
+                                h4("Geselecteerd gebied"),
+                                tableOutput("mapdataTable")),
+                            
+                            div(class="row bg-light",
+                                div(class="col-md-4",
+                                    selectInput(inputId ="indicator",
+                                                label = "Indicator",
+                                                choices = c(emptyInputString), 
+                                                selected = NULL,
+                                                multiple = FALSE
+                                    )
                                 ),
-                                plotlyOutput("histogram")
+                                div(class="col-md-4",
+                                    selectInput(inputId ="level",
+                                                label = "Niveau",
+                                                choices = c(emptyInputString),
+                                                selected = NULL,
+                                                multiple = FALSE
+                                    )
+                                ),
+                                div(class="col-md-4",
+                                    sliderInput(inputId = "year",
+                                                label = "Jaar",
+                                                min=0,
+                                                max=0,
+                                                value=0,
+                                                step=1,
+                                                animate = animationOptions(
+                                                  interval = 1500,
+                                                  loop = FALSE
+                                                ))
+                                )
+                            ),
+                            div(class="row", 
+                                div(class = "col-lg-12",
+                                    textOutput("metadataText")
+                                )
+                            ),
+                            hr(),
+                            div(class="row",
+                                div(class="col-lg-12",
+                                    selectInput(inputId = "selectedAreaSelect",
+                                                label = "gebied(en)",
+                                                choices = c(emptyInputString), 
+                                                selected = NULL,
+                                                multiple = TRUE
+                                    ),
+                                    plotlyOutput("histogram")
+                                )
                             )
-                        )
                         )
                ),
                # per indicator -----
                tabPanel("Per indicator",
-                          div(class="row",
-                              div(class="col-md-9 mapcol",
-                                  leafletOutput("mapComparisons", width="100%", height="500px")
-                              ),
-                              div(class="col-md-3 datacol",
-                                  selectInput(
-                                    inputId = "PerIndicator",
-                                    label = "indicator(en)",
-                                    choices = getThemeLabeledIndicatorList(),
-                                    selected = NULL,
-                                    multiple = TRUE,
-                                    width = "90%"
-                                  ),
-                                  selectInput(
-                                    inputId = "levelPerIndicator",
-                                    label = "Niveau",
-                                    choices = c(emptyInputString),
-                                    selected = NULL,
-                                    multiple = FALSE,
-                                    width = "90%"
-                                  ),
-                                  h4("Geselecteerd gebied"),
-                                  tableOutput("comparisonMapdataTable")
-                              )
-                          ),
-                          div(class="row",
-                              div(class="col-lg-12",
-                                  plotlyOutput("histogram1")
-                              )
-                          )
+                        div(class="row",
+                            div(class="col-md-9 mapcol",
+                                leafletOutput("mapComparisons", width="100%", height="500px")
+                            ),
+                            div(class="col-md-3 datacol",
+                                selectInput(
+                                  inputId = "PerIndicator",
+                                  label = "indicator(en)",
+                                  choices = getThemeLabeledIndicatorList(),
+                                  selected = NULL,
+                                  multiple = TRUE,
+                                  width = "90%"
+                                ),
+                                selectInput(
+                                  inputId = "levelPerIndicator",
+                                  label = "Niveau",
+                                  choices = c(emptyInputString),
+                                  selected = NULL,
+                                  multiple = FALSE,
+                                  width = "90%"
+                                ),
+                                h4("Geselecteerd gebied"),
+                                tableOutput("comparisonMapdataTable")
+                            )
                         ),
+                        div(class="row",
+                            div(class="col-lg-12",
+                                plotlyOutput("histogram1")
+                            )
+                        )
+               ),
                # data viewer ----------------
                tabPanel("Data weergave",
                         selectInput(inputId = "dataViewerIndicator",
@@ -341,59 +341,108 @@ div(class="container",
                         div(class="row",
                             div(class="col-md-9 mapcol",
                                 leafletOutput("mapCorrelations", width="100%", height="500px")
-                            
-                        ),
-                        div(class="row",
-                            div(class="col-md-3 datacol",
-                                selectInput(
-                                  inputId = "CorrelationElem1",
-                                  label = "indicator(en)",
-                                  choices = getThemeLabeledIndicatorList(),
-                                  selected = NULL,
-                                  multiple = FALSE,
-                                  width = "90%"
-                                )
-                                ,
-                                sliderInput(inputId = "corr",
-                                        label = "Correlatie",
-                                        min=-1,
-                                        max=1,
-                                        value=0,
-                                        step=0.1),
-                            
+                                
+                            ),
                             div(class="row",
-                                      selectInput(
-                                      inputId = "Corr2",
+                                div(class="col-md-3 datacol",
+                                    selectInput(
+                                      inputId = "CorrelationElem1",
                                       label = "indicator(en)",
-                                      choices = NULL,
+                                      choices = getThemeLabeledIndicatorList(),
                                       selected = NULL,
                                       multiple = FALSE,
                                       width = "90%"
                                     )
                                     ,
+                                    sliderInput(inputId = "corr",
+                                                label = "Correlatie",
+                                                min=-1,
+                                                max=1,
+                                                value=0,
+                                                step=0.1),
+                                    
+                                    div(class="row",
+                                        selectInput(
+                                          inputId = "Corr2",
+                                          label = "indicator(en)",
+                                          choices = NULL,
+                                          selected = NULL,
+                                          multiple = FALSE,
+                                          width = "90%"
+                                        )
+                                        ,
+                                        selectInput(
+                                          inputId = "CorrelationLevel",
+                                          label = "Niveau",
+                                          choices = c(emptyInputString),
+                                          selected = NULL,
+                                          multiple = FALSE,
+                                          width = "90%"
+                                        )
+                                    )
+                                    
+                                ),
+                                div(class="row",
+                                    div(class="col-md-6 datacol",
+                                        plotlyOutput("CorrelationGraph1")
+                                    )
+                                )
+                            )
+                        )
+               ),
+               tabPanel("Correlaties",
+                        div(class="row",
+                            
+                            div(class="row",
+                                div(class="col-md-3 datacol",
+                                    
+                                    
                                     selectInput(
-                                      inputId = "CorrelationLevel",
+                                      inputId = "stadsdelen",
                                       label = "Niveau",
-                                      choices = c(emptyInputString),
+                                      choices = c("Nieuw-west", "Zuidoost", "Noord", "Westpoort","West", "Zuid", "Centrum", "Oost"),
+                                      selected = NULL,
+                                      multiple = FALSE,
+                                      width = "90%"
+                                    ),
+                                    selectInput(
+                                      inputId = "corr_id1",
+                                      label = "indicator(en)",
+                                      choices = label_ids$label,
                                       selected = NULL,
                                       multiple = FALSE,
                                       width = "90%"
                                     )
-                            )
-                                
-                            ),
-                            div(class="row",
-                                div(class="col-md-6 datacol",
-                                    plotlyOutput("CorrelationGraph1")
+                                    ,
+                                    sliderInput(inputId = "corr_slider",
+                                                label = "Correlatie",
+                                                min=-1,
+                                                max=1,
+                                                value=0,
+                                                step=0.1),
+                                    
+                                    div(class="row",
+                                        selectInput(
+                                          inputId = "corr_id2",
+                                          label = "indicator(en)",
+                                          choices = NULL,
+                                          selected = NULL,
+                                          multiple = FALSE,
+                                          width = "90%"
+                                        )
+                                        
+                                        
+                                    )
+                                    
                                 )
                             )
                         )
-               )
-               
-    ),
-    # Disclaimer
-    htmlOutput("disclaimer")
+                        
+               ),
+               # Disclaimer
+               htmlOutput("disclaimer")
+    )
 )
-)
+
 
 

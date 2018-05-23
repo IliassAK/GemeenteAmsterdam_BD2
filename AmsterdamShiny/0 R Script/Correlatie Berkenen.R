@@ -194,11 +194,11 @@ for (c in correlatieList) {
 
 
 # Alles wordt naar de Database geschreven
-# dbWriteTable(con, "SDNieuw_West_Correlaties", SDNieuw_west_Correlaties, overwrite = TRUE)
-# dbWriteTable(con, "SDZuidoost_Correlaties", SDZuidoost_Correlaties, overwrite = TRUE)
-# dbWriteTable(con, "SDNoord_Correlaties", SDNoord_Correlaties, overwrite = TRUE)
-# dbWriteTable(con, "SDWestpoort_Correlaties", SDWestpoort_Correlaties, overwrite = TRUE)
-# dbWriteTable(con, "SDWest_Correlaties", SDWest_Correlaties, overwrite = TRUE)
-# dbWriteTable(con, "SDZuid_Correlaties", SDZuid_Correlaties, overwrite = TRUE)
-# dbWriteTable(con, "SDCentrum_Correlaties", SDCentrum_Correlaties, overwrite = TRUE)
-# dbWriteTable(con, "SDOost_Correlaties", SDOost_Correlaties, overwrite = TRUE)
+# dbWriteTable(con, "SDNieuw_West_Correlaties", SDNieuw_west_Correlaties, append=FALSE, row.names=FALSE, overwrite=FALSE)
+# dbWriteTable(con, "SDZuidoost_Correlaties", SDZuidoost_Correlaties, append=FALSE, row.names=FALSE, overwrite=FALSE)
+# dbWriteTable(con, "SDNoord_Correlaties", SDNoord_Correlaties, append=FALSE, row.names=FALSE, overwrite=FALSE)
+# dbWriteTable(con, "SDWestpoort_Correlaties", SDWestpoort_Correlaties, append=FALSE, row.names=FALSE, overwrite=FALSE)
+# dbWriteTable(con, "SDWest_Correlaties", SDWest_Correlaties, append=FALSE, row.names=FALSE, overwrite=FALSE)
+# dbWriteTable(con, "SDZuid_Correlaties", SDZuid_Correlaties, append=FALSE, row.names=FALSE, overwrite=FALSE)
+# dbWriteTable(con, "SDCentrum_Correlaties", SDCentrum_Correlaties, append=FALSE, row.names=FALSE, overwrite=FALSE)
+# dbWriteTable(con, "SDOost_Correlaties", SDOost_Correlaties, append=FALSE, row.names=FALSE, overwrite=FALSE)

@@ -10,7 +10,7 @@ function(input, output, session) {
   # Tiles tab -----------------
   source("tabTiles//tileFunctions.R", local=TRUE)
   source("tabTiles//serverTiles.R", local=TRUE)
-
+  
   # Per gebied --------------
   source("tabPerGebied//gebiedFunctions.R",local=TRUE)
   source("tabPerGebied//gebiedHistogram.R",local=TRUE)
@@ -31,6 +31,8 @@ function(input, output, session) {
   source("tabTest//testFunctions.R", local=TRUE)
   source("tabTest//corr.R", local=TRUE)
   
+  
+  source("tabCorrelatie//Correlations.R", local=TRUE)
   #Disclaimer --------------
   
   output$disclaimer <- renderText(

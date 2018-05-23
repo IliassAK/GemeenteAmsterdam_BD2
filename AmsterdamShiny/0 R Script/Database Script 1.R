@@ -36,4 +36,4 @@ gebiedenCijfer <- gebiedenCijfer[,c(9,10,5,7,8,3,11,1,4,12,13,2,6)]
 
 #Data wordt naar een CSV en de database geschreven
 write.csv(gebiedenCijfer, "gebiedenCijfer.csv")
-dbWriteTable(con, "amsterdamDB", gebiedenCijfer, overwrite = TRUE)
+dbWriteTable(con, "amsterdamDB", gebiedenCijfer, append=FALSE, row.names=FALSE, overwrite=FALSE)
