@@ -339,10 +339,7 @@ div(class="container",
                ),
                tabPanel("Verbanden",
                         div(class="row",
-                            div(class="col-md-9 mapcol",
-                                leafletOutput("mapCorrelations", width="100%", height="500px")
-                                
-                            ),
+                            
                             div(class="row",
                                 div(class="col-md-3 datacol",
                                     selectInput(
@@ -392,6 +389,10 @@ div(class="container",
                ),
                tabPanel("Correlaties",
                         div(class="row",
+                            div(class="col-md-9 mapcol",
+                                leafletOutput("mapCorrelations", width="100%", height="500px")
+                                
+                            ),
                             
                             div(class="row",
                                 div(class="col-md-3 datacol",

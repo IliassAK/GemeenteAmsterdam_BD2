@@ -38,7 +38,7 @@ observe({
   
   
   
-  slider <- input$corr_slider
+  
   
   
   
@@ -50,13 +50,13 @@ observe({
   indicator_id2 <- NULL
   getLabel<- function(x)
   {
+    slider <- input$corr_slider
+    value <- correlatieList[[x]]$value 
     
     
+    indicator_id2 <- correlatieList[[x]]$statistics_2_id %>% subset(indicator_id == correlatieList[[x]]$statistics_1_id) %>% subset(value >= slider)
     
-    
-    indicator_id2 <- correlatieList[[x]]$statistics_2_id %>% subset(indicator_id == correlatieList[[x]]$statistics_1_id)
-    
-    indicator_label2 <- label_ids[label_ids$variabele_ID%in%indicator_id2,2 ]
+    indicator_label2 <- label_ids[label_ids$variabele_ID%in%indicator_id2,2 ] 
     updateSelectInput(session, 
                       
                       inputId = "corr_id2",
