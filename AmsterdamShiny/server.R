@@ -27,12 +27,11 @@ function(input, output, session) {
   source("tabLeefbaarheid//leefbaarheidFunctions.R", local=TRUE)
   source("tabLeefbaarheid//leefbaarheid.R", local=TRUE)
   
-  source("tabTest//test.R", local=TRUE)
-  source("tabTest//testFunctions.R", local=TRUE)
-  source("tabTest//corr.R", local=TRUE)
+  source("tabCorrelatie//CorrelatieController.R", local=TRUE)
+  source("tabCorrelatie//CorrelatieEvents.R", local=TRUE)
+  source("tabCorrelatie//CorrelatieGraphs.R", local=TRUE)
   
   
-  source("tabCorrelatie//Correlations.R", local=TRUE)
   #Disclaimer --------------
   
   output$disclaimer <- renderText(

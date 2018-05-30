@@ -337,113 +337,86 @@ div(class="container",
                           )
                         )
                ),
-               tabPanel("Verbanden",
+               #Einde Sectie informatie
+               #
+               #
+               #Sectie Correlatie: Uitbreiding op bestaande applicatie
+               tabPanel("Correlatie",
                         div(class="row",
-                            
-                            div(class="row",
-                                div(class="col-md-3 datacol",
-                                    selectInput(
-                                      inputId = "CorrelationElem1",
-                                      label = "indicator(en)",
-                                      choices = getThemeLabeledIndicatorList(),
-                                      selected = NULL,
-                                      multiple = FALSE,
-                                      width = "90%"
-                                    )
-                                    ,
-                                    sliderInput(inputId = "corr",
-                                                label = "Correlatie",
-                                                min=-1,
-                                                max=1,
-                                                value=0,
-                                                step=0.1),
-                                    
-                                    div(class="row",
-                                        selectInput(
-                                          inputId = "Corr2",
-                                          label = "indicator(en)",
-                                          choices = NULL,
-                                          selected = NULL,
-                                          multiple = FALSE,
-                                          width = "90%"
-                                        )
-                                        ,
-                                        selectInput(
-                                          inputId = "CorrelationLevel",
-                                          label = "Niveau",
-                                          choices = c(emptyInputString),
-                                          selected = NULL,
-                                          multiple = FALSE,
-                                          width = "90%"
-                                        )
-                                    )
-                                    
-                                ),
-                                div(class="row",
-                                    div(class="col-md-6 datacol",
-                                        plotlyOutput("CorrelationGraph1")
-                                    )
-                                )
-                            )
-                        )
-               ),
-               tabPanel("Correlaties",
-                        div(class="row",
-                            div(class="col-md-9 mapcol",
-                                leafletOutput("mapCorrelations", width="100%", height="500px")
+                            div(class="col-md-6 mapcol",
                                 
+                                selectInput(
+                                  inputId = "correlationLevel",
+                                  label = "Niveau",
+                                  choices = c("Zuid", "Zuidoost", "Centrum", "Oost", "Noord", "West", "Westpoort", "Nieuw-West"),
+                                  selected = NULL,
+                                  multiple = FALSE,
+                                  width = "90%"
+                                ),
+                                
+                                leafletOutput(
+                                  "mapCorrelations", 
+                                  width="100%",
+                                  height="500px")
                             ),
                             
-                            div(class="row",
-                                div(class="col-md-3 datacol",
-                                    
-                                    
-                                    selectInput(
-                                      inputId = "stadsdelen",
-                                      label = "Niveau",
-                                      choices = c("Nieuw-west", "Zuidoost", "Noord", "Westpoort","West", "Zuid", "Centrum", "Oost"),
-                                      selected = NULL,
-                                      multiple = FALSE,
-                                      width = "90%"
-                                    ),
-                                    selectInput(
-                                      inputId = "corr_id1",
-                                      label = "indicator(en)",
-                                      choices = label_ids$label,
-                                      selected = NULL,
-                                      multiple = FALSE,
-                                      width = "90%"
-                                    )
-                                    ,
-                                    sliderInput(inputId = "corr_slider",
-                                                label = "Correlatie",
-                                                min=-1,
-                                                max=1,
-                                                value=0,
-                                                step=0.1),
-                                    
-                                    div(class="row",
-                                        selectInput(
-                                          inputId = "corr_id2",
-                                          label = "indicator(en)",
-                                          choices = NULL,
-                                          selected = NULL,
-                                          multiple = FALSE,
-                                          width = "90%"
-                                        )
-                                        
-                                        
-                                    )
-                                    
+                            
+                            div(class="col-md-6 datacol", top="500px",
+                                br(),
+                                
+                                tags$h5("Geselecteerd gebied:", left = "100px"),
+                                uiOutput("code"),
+                                hr(),
+                                
+                                
+                                selectInput(
+                                  inputId = "CorrelationElem1",
+                                  label = "Indicator(en)",
+                                  choices = getThemeLabeledIndicatorList(),
+                                  selected = NULL,
+                                  multiple = FALSE,
+                                  width = "90%"
+                                ),
+                                
+                                sliderInput(
+                                  inputId = "correlatieGrens",
+                                  label="Correlatie grens", 
+                                  min = 0, 
+                                  max = 1, 
+                                  value = c(0,1),
+                                  step = 0.1,
+                                  width ="90%"
+                                ),
+                                checkboxInput(
+                                  "filterCorrelation", 
+                                  "Filter soortgelijke categorien", 
+                                  FALSE
+                                ),
+                                hr(),
+                                selectInput(
+                                  inputId = "CorrelationElem2",
+                                  label = "Correleerde indicatoren",
+                                  choices = c(""),
+                                  selected = NULL,
+                                  multiple = FALSE,
+                                  width = "90%"
                                 )
+                            )
+                        ),
+                        
+                        div(class="row",
+                            div(class="col-md-6 datacol",
+                                plotlyOutput("CorrelationGraph1")
+                            ), 
+                            
+                            div(class="col-md-6 datacol",
+                                plotlyOutput("CorrelationGraph2")
                             )
                         )
                         
-               ),
-               # Disclaimer
-               htmlOutput("disclaimer")
-    )
+               )
+               #Einde Sectie correlatie
+    ),
+    # Disclaimer
+    htmlOutput("disclaimer")
 )
-
-
-
