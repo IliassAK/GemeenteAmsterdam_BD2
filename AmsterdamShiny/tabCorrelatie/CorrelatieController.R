@@ -1,7 +1,7 @@
 #Render the comparison map
 output$mapCorrelations <- renderLeaflet(createLeafletMap())
 mapCorrelationsProxy <- leafletProxy("mapCorrelations")
-selectedArea <- "Noord"
+selectedArea <- ""
 
 #output$comparisonMapdataTable <- renderSelectedAreaInfoTable(input$mapCorrelations_geojson_mouseover$properties)
 
@@ -28,6 +28,8 @@ observeEvent(input$CorrelationElem1, {
                     choices = c("", sort(levelresults)),
                     selected = NULL) 
   
+  updateCorrelationGraph1(selectedArea)
+  
   
 })
 
@@ -37,7 +39,7 @@ observeEvent(input$correlatieGrens, {
   
   levelresults <- selecteerIndicatoren(input$CorrelationElem1, input$correlatieGrens, selectedArea, input$filterCorrelation)
   updateSelectInput(session, "CorrelationElem2",
-                    choices = c("", sort(levelresults)),
+                    choices = c(sort(levelresults)),
                     selected = NULL) 
   
   
@@ -49,7 +51,7 @@ observeEvent(input$filterCorrelation, {
   
   levelresults <- selecteerIndicatoren(input$CorrelationElem1, input$correlatieGrens, selectedArea, input$filterCorrelation)
   updateSelectInput(session, "CorrelationElem2",
-                    choices = c("", sort(levelresults)),
+                    choices = c(sort(levelresults)),
                     selected = NULL) 
   
   
@@ -67,20 +69,25 @@ observeEvent(input$mapCorrelations_geojson_click, {
   code <- input$mapCorrelations_geojson_click$properties$gebiedcode
   selectedCode <<- code
   
+  
+  
+  
   gebiedgekozen<- gebieden[grep(code, gebieden$gebiedcode), ]
   gebiedgekozen<- gebiedgekozen[grep("Stadsdeel", gebiedgekozen$niveaunaam), ]
   
   output$code<-renderUI({
     gebiedgekozen$gebiednaam
+    
   })
   
   selectedArea <<- gebiedgekozen$gebiednaam
   
   levelresults <- selecteerIndicatoren(input$CorrelationElem1, input$correlatieGrens, selectedArea, input$filterCorrelation)
   updateSelectInput(session, "CorrelationElem2",
-                    choices = c("", sort(levelresults)),
+                    choices = c(sort(levelresults)),
                     selected = NULL) 
   
+  updateCorrelationGraph1(selectedArea)
   
   
 })
@@ -94,8 +101,8 @@ observeEvent(input$CorrelationElem2, {
   
   
   
-  updateCorrelationGraph1(selectedCode)
-  updateCorrelationGraph2(selectedCode)
+  updateCorrelationGraph1(selectedArea)
+  updateCorrelationGraph2(selectedArea)
   
   
   

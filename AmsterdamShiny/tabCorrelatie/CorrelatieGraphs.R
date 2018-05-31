@@ -2,6 +2,8 @@
 output$mapCorrelations <- renderLeaflet(createLeafletMap())
 mapCorrelationsProxy <- leafletProxy("mapCorrelations")
 
+conn <- connectDb()
+
 #setwd("D:/Development/Projects/Big Data Project/2018_BD2_OpenData2/correlatie")
 
 
@@ -73,13 +75,21 @@ addToMapCorrelations <- function(map, level="Stadsdeel") {
     opacity = 1,
     fillOpacity = 0.5
   )
-  addGeoJSON(map, json)
+  addGeoJSONv2(map, json,
+               highlightOptions = highlightOptions(
+                 weight=2,
+                 color= 'white',
+                 fillOpacity = 1,
+                 opacity = 1,
+                 bringToFront = TRUE,
+                 sendToBack = TRUE
+               ))
 }
 
 updateCorrelationGraph1 <- function(properties) {
-  if(input$CorrelationElem1 == "" ||  input$correlationLevel == "" || input$filterCorrelation == ""){
-    return()
-  }
+  # if(input$CorrelationElem1 == "" ||  input$correlationLevel == "" || input$filterCorrelation == ""){
+  #   return()
+  # }
   
   pMode <- "lines+markers"
   pType <- "scatter"

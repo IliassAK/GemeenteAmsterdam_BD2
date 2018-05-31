@@ -348,8 +348,8 @@ div(class="container",
                                 selectInput(
                                   inputId = "correlationLevel",
                                   label = "Niveau",
-                                  choices = c("Zuid", "Zuidoost", "Centrum", "Oost", "Noord", "West", "Westpoort", "Nieuw-West"),
-                                  selected = NULL,
+                                  choices = c("", "Stadsdeel"),
+                                  selected = "Noord",
                                   multiple = FALSE,
                                   width = "90%"
                                 ),
